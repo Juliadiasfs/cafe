@@ -25,41 +25,46 @@
   </section>
   <section class="container-form">
   <?php
-                require "conexao.php"; 
-                $id = $_GET['id'];
-              $sql = "select * from produtos where id='$id'";
-              $result = $conn->query($sql);
-          
-              $row = $result->fetch_assoc();
+         require "conexao.php";
+         $id = $_GET['id'];
+         $sql = "select * from produtos where id = '$id'";
+         $result = $conn->query($sql);
+   
+         $row = $result->fetch_assoc();
                 ?>
                 
-    <form action="#">
+              <form action="processar-editar-produto.php" method="POST">
 
-      <label for="nome">Nome</label>
-      <input type="text" id="nome" name="nome" placeholder="<?= $row['nome'] ?>" required>
+<label for="nome">Nome</label>
+<input type="text" id="nome" name="nome" placeholder="<?php echo $row['nome']; ?>" value="<?php echo $row['nome']; ?>" required>
 
-      <div class="container-radio">
-        <div>
-            <label for="cafe">Café</label>
-            <input type="radio" id="cafe" name="tipo" value="Café" checked>
-        </div>
-        <div>
-            <label for="almoco">Almoço</label>
-            <input type="radio" id="almoco" name="tipo" value="Almoço">
-        </div>
-    </div>
+<div class="container-radio">
+  <div>
+    <label for="cafe">Café</label>
+    <input type="radio" id="cafe" name="tipo" value="Café" <?php if ($row['tipo'] == "Café") {
+                                                              echo 'checked';
+                                                            } ?>>
+  </div>
+  <div>
+    <label for="almoco">Almoço</label>
+    <input type="radio" id="almoco" name="tipo" value="Almoço" <?php if ($row['tipo'] == "Almoço") {
+                                                                  echo 'checked';
+                                                                } ?>>
+  </div>
+</div>
 
-      <label for="descricao">Descrição</label>
-      <input type="text" id="descricao" name="descricao" placeholder="<?= $row['descricao'] ?>" required>
+<label for="descricao">Descrição</label>
+<input type="text" id="descricao" name="descricao" placeholder="<?php echo $row['descricao']; ?>" value="<?php echo $row['descricao']; ?>" required>
 
-      <label for="preco">Preço</label>
-      <input type="text" id="preco" name="preco" placeholder="<?= $row['preco'] ?>" required>
+<label for="preco">Preço</label>
+<input type="text" id="preco" name="preco" placeholder="<?php echo $row['preco']; ?>" value="<?php echo $row['preco']; ?>" required>
 
-      <label for="imagem">Envie uma imagem do produto</label>
-      <input type="file" name="imagem" accept="image/*" id="imagem" placeholder="Envie uma imagem">
+<label for="imagem">Envie uma imagem do produto</label>
+<input type="file" name="imagem" accept="image/*" id="imagem" placeholder="Envie uma imagem">
+<input type="hidden" name="id" value="<?= $row['id'] ?>">
 
-      <input type="submit" name="editar" class="botao-cadastrar"  value="Editar produto"/>
-    </form>
+<input type="submit" name="editar" class="botao-cadastrar" value="Editar produto" />
+</form>
 
   </section>
 </main>

@@ -53,12 +53,12 @@
         <td>
 
           <form action="editar-produto.php" method="GET">
-            <input type="hidden" name="id" value="<?=$row['id']?>">
+            <input type="hidden" name="id" value="<?= $row['id'] ?>">
             <input type="submit" name="botao-editar" class="botao-editar" value="Editar">
           </form></td>
           <td>
           <form action="editar-produto.php" method="GET">
-            <input type="hidden" name="id" value="<?=$row['id']?>">
+            <input type="hidden" name="id" value="<?= $row['id'] ?>">
             <input type="submit" name="botao-excluir" class="botao-excluir" value="Excluir">
           </form>
         </td>
