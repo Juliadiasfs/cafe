@@ -19,6 +19,9 @@
 </head>
 
 <body>
+<form action="admin.php" method="post" style= "margin-left:0;">
+                <input type="submit" name="voltar" class="botao-cadastrar" value="voltar" style="display: block; margin-left: auto; margin-right: auto;" />
+            </form>
   <main>
     <section class="container-admin-banner">
       <img src="img/logo-ifsp-removebg.png" class="logo-admin" alt="logo-serenatto">

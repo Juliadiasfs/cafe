@@ -58,7 +58,7 @@
           </form>
         </td>
         <td>
-          <form action="excluir-produto.php" method="POST">
+          <form action="excluir-produto.php" method="GET">
             <input type="hidden" name="id" value="<?= $row['id'] ?>">
             <input type="submit" class="botao-excluir" value="Excluir">
           </form>
@@ -75,6 +75,41 @@
     <input type="submit" class="botao-cadastrar" value="Baixar Relatório"/>
   </form>
   </section>
+  <script>
+    function excluirProduto() {
+      event.preventDefault(); // Impede o envio padrão do formulário
+
+      const nome = document.getElementById("nome").value;
+      const tipo = document.querySelector('input[name="tipo"]:checked').value;
+      const descricao = document.getElementById("descricao").value;
+      const preco = document.getElementById("preco").value;
+      const imagem = document.getElementById("imagem").value;
+      const id = document.getElementById("id").value;
+
+      Swal.fire({
+        title: "Confirme a edição do produto",
+        html: `<strong>Nome:</strong> ${nome}<br>
+           <strong>Tipo:</strong> ${tipo}<br>
+           <strong>Descrição:</strong> ${descricao}<br>
+           <strong>Preço:</strong> ${preco}<br>
+           <strong>Imagem:</strong> ${fileName}<br>`,
+        showDenyButton: true,
+        
+        confirmButtonText: "Editar",
+        denyButtonText: "Cancelar",
+
+      }).then((result) => {
+        if (result.isConfirmed) {
+          // Se o usuário confirmar a edição, redirecione para outra página
+          const url = `excluir-produto-sucesso.php?id=${id}`;
+          window.location.href = url;
+        } else if (result.isDenied) {
+          Swal.fire("Edição cancelada", "", "info");
+        }
+      });
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </main>
 </body>
 </html>

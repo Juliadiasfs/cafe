@@ -1,4 +1,4 @@
-create database cafebistro_phpoo;
+create database cafebistro;
 use cafebistro;
 
 create table usuario (id int 

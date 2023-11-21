@@ -14,27 +14,25 @@
     <link rel="icon" href="img/icone-serenatto.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <title>IFSP - Cadastrar Produtos</title>
+    <title>IFSP - Cadastrar Produto</title>
 </head>
 <body>
 <main>
     <section class="container-admin-banner">
         <img src="img/logo-ifsp-removebg.png" class="logo-admin" alt="logo-serenatto">
-        <h1>Cadastro realizado com sucesso</h1>
+        <h1>Cadastro de produto realizado com sucesso</h1>
         <img class= "ornaments" src="img/ornaments-coffee.png" alt="ornaments">
     </section>
     <section class="container-form">
-        <form action="login.php" method="post">                      
-            <input type="submit" name="login" 
-            class="botao-cadastrar" value="login"/>
-        </form>
+            <form action="admin.php" method="post">
+                <input type="submit" name="voltar" class="botao-cadastrar" value="voltar" />
+            </form>
 
-    </section>
+        </section>
 </main>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js" integrity="sha512-Rdk63VC+1UYzGSgd3u2iadi0joUrcwX0IWp2rTh6KXFoAmgOjRS99Vynz1lJPT8dLjvo6JZOqpAHJyfCEZ5KoA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="js/index.js"></script>
 </body>
-
 </html>

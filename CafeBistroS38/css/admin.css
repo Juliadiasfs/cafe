@@ -105,6 +105,7 @@ table tbody tr td a:hover, .botao-cadastrar:hover, .botao-excluir:hover,
     border-radius: 10px;
     padding: 10px 10px;
     border: none;
+    align-items: center;
 }
 
 
